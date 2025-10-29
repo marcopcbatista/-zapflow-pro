@@ -16,14 +16,14 @@ export default function App() {
     { icon: Users, value: '10.000+', label: 'Empresas Ativas' },
     { icon: MessageSquare, value: '5M+', label: 'Mensagens/Dia' },
     { icon: TrendingUp, value: '300%', label: 'Aumento em Vendas' },
-    { icon: Star, value: '4.9/5', label: 'Avaliação' }
+    { icon: Star, value: '4.9/5', label: 'Avalia��o' }
   ];
 
   const features = [
     {
       icon: Zap,
-      title: 'Automação Inteligente',
-      description: 'Respostas automáticas 24/7 com IA avançada que aprende com suas conversas'
+      title: 'Automa��o Inteligente',
+      description: 'Respostas autom�ticas 24/7 com IA avan�ada que aprende com suas conversas'
     },
     {
       icon: Users,
@@ -33,12 +33,12 @@ export default function App() {
     {
       icon: Target,
       title: 'Funis de Vendas',
-      description: 'Crie jornadas automatizadas e converta leads em clientes no piloto automático'
+      description: 'Crie jornadas automatizadas e converta leads em clientes no piloto autom�tico'
     },
     {
       icon: TrendingUp,
       title: 'Analytics Completo',
-      description: 'Dashboards intuitivos com métricas de conversão, engajamento e ROI'
+      description: 'Dashboards intuitivos com m�tricas de convers�o, engajamento e ROI'
     },
     {
       icon: Clock,
@@ -47,8 +47,8 @@ export default function App() {
     },
     {
       icon: DollarSign,
-      title: 'Integração Pagamentos',
-      description: 'Receba pagamentos via WhatsApp com Pix, cartão e boleto integrados'
+      title: 'Integra��o Pagamentos',
+      description: 'Receba pagamentos via WhatsApp com Pix, cart�o e boleto integrados'
     }
   ];
 
@@ -56,13 +56,13 @@ export default function App() {
     {
       name: 'Starter',
       price: 'R$ 97',
-      period: '/mês',
-      description: 'Para pequenos negócios',
+      period: '/m�s',
+      description: 'Para pequenos neg�cios',
       features: [
-        '1 número WhatsApp',
-        '1.000 mensagens/mês',
+        '1 n�mero WhatsApp',
+        '1.000 mensagens/m�s',
         '2 atendentes',
-        'Automação básica',
+        'Automa��o b�sica',
         'Suporte por email'
       ],
       popular: false
@@ -70,16 +70,16 @@ export default function App() {
     {
       name: 'Professional',
       price: 'R$ 297',
-      period: '/mês',
+      period: '/m�s',
       description: 'Mais vendido',
       features: [
-        '3 números WhatsApp',
-        '10.000 mensagens/mês',
+        '3 n�meros WhatsApp',
+        '10.000 mensagens/m�s',
         '10 atendentes',
-        'Automação avançada + IA',
+        'Automa��o avan�ada + IA',
         'Funis ilimitados',
         'Analytics completo',
-        'Suporte prioritário',
+        'Suporte priorit�rio',
         'API acesso'
       ],
       popular: true
@@ -87,15 +87,15 @@ export default function App() {
     {
       name: 'Enterprise',
       price: 'R$ 997',
-      period: '/mês',
+      period: '/m�s',
       description: 'Para grandes empresas',
       features: [
-        'Números ilimitados',
+        'N�meros ilimitados',
         'Mensagens ilimitadas',
         'Atendentes ilimitados',
         'IA personalizada',
         'White label',
-        'Integrações customizadas',
+        'Integra��es customizadas',
         'Gerente de conta dedicado',
         'SLA 99.9%'
       ],
@@ -107,28 +107,28 @@ export default function App() {
     {
       name: 'Carlos Mendes',
       role: 'CEO, Loja Virtual X',
-      avatar: '👨‍💼',
+      avatar: '?????',
       text: 'Aumentamos 340% em vendas em apenas 2 meses. O ROI foi imediato!',
       rating: 5
     },
     {
       name: 'Ana Silva',
-      role: 'Gerente, Clínica Saúde+',
-      avatar: '👩‍⚕️',
+      role: 'Gerente, Cl�nica Sa�de+',
+      avatar: '?????',
       text: 'Automatizamos todo o agendamento. Economizamos 15h/semana da equipe.',
       rating: 5
     },
     {
       name: 'Roberto Lima',
       role: 'Dono, Academia Fit',
-      avatar: '🏋️',
-      text: 'Recuperamos 60% dos leads perdidos com os follow-ups automáticos.',
+      avatar: '???',
+      text: 'Recuperamos 60% dos leads perdidos com os follow-ups autom�ticos.',
       rating: 5
     }
   ];
 
   const handleCTA = () => {
-    window.open('https://pay.kiwify.com.br/SEU-LINK-AQUI', '_blank');
+    window.open('https://pay.kiwify.com.br/XxlKJT4', '_blank');
   };
 
   return (
@@ -155,7 +155,7 @@ export default function App() {
                 onClick={handleCTA}
                 className="bg-gradient-to-r from-purple-600 to-pink-600 px-6 py-3 rounded-full font-semibold hover:scale-105 transition-transform shadow-lg hover:shadow-purple-500/50"
               >
-                Começar Agora
+                Come�ar Agora
               </button>
             </div>
 
@@ -177,7 +177,7 @@ export default function App() {
                 onClick={handleCTA}
                 className="w-full bg-gradient-to-r from-purple-600 to-pink-600 px-6 py-3 rounded-full font-semibold"
               >
-                Começar Agora
+                Come�ar Agora
               </button>
             </div>
           </div>
@@ -188,7 +188,7 @@ export default function App() {
       <section className="pt-32 pb-20 px-4">
         <div className="max-w-7xl mx-auto text-center">
           <div className="inline-block bg-purple-500/20 border border-purple-500/30 rounded-full px-6 py-2 mb-8">
-            <span className="text-purple-300 font-semibold">🚀 Revolucione seu atendimento</span>
+            <span className="text-purple-300 font-semibold">?? Revolucione seu atendimento</span>
           </div>
           
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
@@ -200,7 +200,7 @@ export default function App() {
           </h1>
           
           <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto">
-            A plataforma completa de automação WhatsApp que empresas inteligentes usam para escalar vendas sem aumentar equipe
+            A plataforma completa de automa��o WhatsApp que empresas inteligentes usam para escalar vendas sem aumentar equipe
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
@@ -208,7 +208,7 @@ export default function App() {
               onClick={handleCTA}
               className="bg-gradient-to-r from-purple-600 to-pink-600 px-8 py-4 rounded-full font-bold text-lg hover:scale-105 transition-transform shadow-2xl hover:shadow-purple-500/50 flex items-center justify-center gap-2"
             >
-              Começar Teste Grátis
+              Come�ar Teste Gr�tis
               <ArrowRight className="w-5 h-5" />
             </button>
             <button className="border-2 border-purple-500 px-8 py-4 rounded-full font-bold text-lg hover:bg-purple-500/10 transition flex items-center justify-center gap-2">
@@ -235,10 +235,10 @@ export default function App() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Recursos que <span className="text-purple-400">Fazem a Diferença</span>
+              Recursos que <span className="text-purple-400">Fazem a Diferen�a</span>
             </h2>
             <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              Tudo que você precisa para automatizar, vender e escalar seu negócio
+              Tudo que voc� precisa para automatizar, vender e escalar seu neg�cio
             </p>
           </div>
 
@@ -313,7 +313,7 @@ export default function App() {
                       : 'bg-gray-700 hover:bg-gray-600'
                   }`}
                 >
-                  Começar Agora
+                  Come�ar Agora
                 </button>
               </div>
             ))}
@@ -366,16 +366,16 @@ export default function App() {
               Pronto para 10x suas Vendas?
             </h2>
             <p className="text-xl mb-8 opacity-90">
-              Junte-se a mais de 10.000 empresas que já automatizaram o WhatsApp
+              Junte-se a mais de 10.000 empresas que j� automatizaram o WhatsApp
             </p>
             <button
               onClick={handleCTA}
               className="bg-white text-purple-600 px-10 py-5 rounded-full font-bold text-lg hover:scale-105 transition-transform shadow-xl"
             >
-              Começar Teste Grátis por 7 Dias
+              Come�ar Teste Gr�tis por 7 Dias
             </button>
             <p className="text-sm mt-4 opacity-75">
-              ✓ Sem cartão de crédito • ✓ Cancele quando quiser • ✓ Suporte 24/7
+              ? Sem cart�o de cr�dito � ? Cancele quando quiser � ? Suporte 24/7
             </p>
           </div>
         </div>
@@ -391,7 +391,7 @@ export default function App() {
             <span className="text-xl font-bold">ZapFlow Pro</span>
           </div>
           <p className="text-gray-400 mb-4">
-            A plataforma mais completa de automação WhatsApp do Brasil
+            A plataforma mais completa de automa��o WhatsApp do Brasil
           </p>
           <div className="flex justify-center gap-6 text-sm text-gray-500">
             <a href="#" className="hover:text-purple-400 transition">Termos de Uso</a>
@@ -399,7 +399,7 @@ export default function App() {
             <a href="#" className="hover:text-purple-400 transition">Suporte</a>
           </div>
           <p className="text-gray-600 text-sm mt-6">
-            © 2024 ZapFlow Pro. Todos os direitos reservados.
+            � 2024 ZapFlow Pro. Todos os direitos reservados.
           </p>
         </div>
       </footer>
