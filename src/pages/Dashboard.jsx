@@ -1,7 +1,6 @@
-@"
 import React, { useState, useEffect } from 'react';
 import { Routes, Route, Link, useLocation } from 'react-router-dom';
-import { LayoutDashboard, MessageSquare, Users, Settings, LogOut, Zap, TrendingUp, Clock, CheckCircle2, BarChart3, Bot, Bell, CreditCard, QrCode, Menu, X } from 'lucide-react';
+import { LayoutDashboard, MessageSquare, Users, Settings, LogOut, Zap, TrendingUp, Clock, CheckCircle2, BarChart3, Bot, Bell, QrCode, Menu, X } from 'lucide-react';
 import { LineChart, Line, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
 function Dashboard() {
@@ -32,16 +31,11 @@ function Dashboard() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-900 via-purple-800 to-indigo-900">
-      {/* Sidebar Mobile Toggle */}
-      <button
-        onClick={() => setSidebarOpen(!sidebarOpen)}
-        className="lg:hidden fixed top-4 left-4 z-50 bg-purple-600 p-3 rounded-xl text-white"
-      >
+      <button onClick={() => setSidebarOpen(!sidebarOpen)} className="lg:hidden fixed top-4 left-4 z-50 bg-purple-600 p-3 rounded-xl text-white">
         {sidebarOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
       </button>
 
-      {/* Sidebar */}
-      <aside className={\`fixed left-0 top-0 h-full w-64 bg-purple-950/50 backdrop-blur-xl border-r border-purple-500/30 transition-transform duration-300 z-40 \${sidebarOpen ? 'translate-x-0' : '-translate-x-full'} lg:translate-x-0\`}>
+      <aside className={`fixed left-0 top-0 h-full w-64 bg-purple-950/50 backdrop-blur-xl border-r border-purple-500/30 transition-transform duration-300 z-40 ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'} lg:translate-x-0`}>
         <div className="p-6">
           <div className="flex items-center space-x-3 mb-8">
             <div className="w-10 h-10 bg-gradient-to-br from-pink-500 to-purple-600 rounded-xl flex items-center justify-center">
@@ -52,16 +46,7 @@ function Dashboard() {
 
           <nav className="space-y-2">
             {menuItems.map((item) => (
-              <Link
-                key={item.path}
-                to={item.path}
-                onClick={() => setSidebarOpen(false)}
-                className={\`flex items-center space-x-3 px-4 py-3 rounded-xl transition-all \${
-                  location.pathname === item.path
-                    ? 'bg-gradient-to-r from-pink-500 to-purple-600 text-white shadow-lg'
-                    : 'text-purple-200 hover:bg-purple-800/50'
-                }\`}
-              >
+              <Link key={item.path} to={item.path} onClick={() => setSidebarOpen(false)} className={`flex items-center space-x-3 px-4 py-3 rounded-xl transition-all ${location.pathname === item.path ? 'bg-gradient-to-r from-pink-500 to-purple-600 text-white shadow-lg' : 'text-purple-200 hover:bg-purple-800/50'}`}>
                 {item.icon}
                 <span className="font-medium">{item.label}</span>
               </Link>
@@ -74,29 +59,20 @@ function Dashboard() {
               <span className="text-xs bg-green-500 text-white px-2 py-1 rounded-full">Ativo</span>
             </div>
             <p className="text-xs text-purple-200 mb-3">
-              {user && new Date(user.trialEndsAt) > new Date()
-                ? \`Expira em \${Math.ceil((new Date(user.trialEndsAt) - new Date()) / (1000 * 60 * 60 * 24))} dias\`
-                : 'Trial expirado'}
+              {user && new Date(user.trialEndsAt) > new Date() ? `Expira em ${Math.ceil((new Date(user.trialEndsAt) - new Date()) / (1000 * 60 * 60 * 24))} dias` : 'Trial expirado'}
             </p>
-            <button
-              onClick={() => window.open('https://pay.kiwify.com.br/XxlKJT4', '_blank')}
-              className="w-full bg-gradient-to-r from-pink-500 to-purple-600 text-white py-2 rounded-lg text-sm font-bold hover:shadow-lg transition-all"
-            >
+            <button onClick={() => window.open('https://pay.kiwify.com.br/XxlKJT4', '_blank')} className="w-full bg-gradient-to-r from-pink-500 to-purple-600 text-white py-2 rounded-lg text-sm font-bold hover:shadow-lg transition-all">
               Fazer Upgrade
             </button>
           </div>
 
-          <button
-            onClick={handleLogout}
-            className="flex items-center space-x-3 px-4 py-3 mt-6 text-purple-200 hover:text-white hover:bg-purple-800/50 rounded-xl transition-all w-full"
-          >
+          <button onClick={handleLogout} className="flex items-center space-x-3 px-4 py-3 mt-6 text-purple-200 hover:text-white hover:bg-purple-800/50 rounded-xl transition-all w-full">
             <LogOut className="w-5 h-5" />
             <span className="font-medium">Sair</span>
           </button>
         </div>
       </aside>
 
-      {/* Main Content */}
       <main className="lg:ml-64 p-4 lg:p-8">
         <Routes>
           <Route path="/" element={<DashboardHome user={user} />} />
@@ -111,7 +87,6 @@ function Dashboard() {
   );
 }
 
-// Dashboard Home
 function DashboardHome({ user }) {
   const stats = [
     { icon: <MessageSquare className="w-6 h-6" />, label: 'Mensagens Hoje', value: '1,234', change: '+12%', color: 'from-blue-500 to-cyan-500' },
@@ -132,12 +107,9 @@ function DashboardHome({ user }) {
 
   return (
     <div className="space-y-6">
-      {/* Header */}
       <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
         <div>
-          <h1 className="text-3xl font-bold text-white mb-2">
-            Olá, {user?.name || 'Usuário'}! 👋
-          </h1>
+          <h1 className="text-3xl font-bold text-white mb-2">Olá, {user?.name || 'Usuário'}! 👋</h1>
           <p className="text-purple-200">Aqui está o resumo do seu WhatsApp hoje</p>
         </div>
         <button className="mt-4 lg:mt-0 bg-gradient-to-r from-pink-500 to-purple-600 text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg transition-all flex items-center space-x-2">
@@ -146,25 +118,21 @@ function DashboardHome({ user }) {
         </button>
       </div>
 
-      {/* Stats Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {stats.map((stat, index) => (
           <div key={index} className="bg-white/10 backdrop-blur-xl rounded-2xl p-6 border border-purple-500/30">
-            <div className={\`w-12 h-12 bg-gradient-to-br \${stat.color} rounded-xl flex items-center justify-center text-white mb-4\`}>
+            <div className={`w-12 h-12 bg-gradient-to-br ${stat.color} rounded-xl flex items-center justify-center text-white mb-4`}>
               {stat.icon}
             </div>
             <p className="text-purple-200 text-sm mb-1">{stat.label}</p>
             <div className="flex items-end justify-between">
               <span className="text-3xl font-bold text-white">{stat.value}</span>
-              <span className={\`text-sm font-semibold \${stat.change.startsWith('+') ? 'text-green-400' : 'text-red-400'}\`}>
-                {stat.change}
-              </span>
+              <span className={`text-sm font-semibold ${stat.change.startsWith('+') ? 'text-green-400' : 'text-red-400'}`}>{stat.change}</span>
             </div>
           </div>
         ))}
       </div>
 
-      {/* Charts */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-6 border border-purple-500/30">
           <h3 className="text-xl font-bold text-white mb-4">Mensagens da Semana</h3>
@@ -193,7 +161,6 @@ function DashboardHome({ user }) {
         </div>
       </div>
 
-      {/* Quick Actions */}
       <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-6 border border-purple-500/30">
         <h3 className="text-xl font-bold text-white mb-4">Ações Rápidas</h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -218,7 +185,6 @@ function DashboardHome({ user }) {
   );
 }
 
-// WhatsApp Page
 function WhatsAppPage() {
   return (
     <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 border border-purple-500/30">
@@ -266,7 +232,6 @@ function WhatsAppPage() {
   );
 }
 
-// Chatbot Page
 function ChatbotPage() {
   return (
     <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 border border-purple-500/30">
@@ -281,9 +246,7 @@ function ChatbotPage() {
                   <h4 className="text-white font-semibold mb-1">{template}</h4>
                   <p className="text-purple-200 text-sm">Pronto para usar</p>
                 </div>
-                <button className="bg-gradient-to-r from-pink-500 to-purple-600 text-white px-4 py-2 rounded-lg text-sm font-semibold">
-                  Usar
-                </button>
+                <button className="bg-gradient-to-r from-pink-500 to-purple-600 text-white px-4 py-2 rounded-lg text-sm font-semibold">Usar</button>
               </div>
             </div>
           ))}
@@ -309,7 +272,6 @@ function ChatbotPage() {
   );
 }
 
-// Contacts Page
 function ContactsPage() {
   const contacts = [
     { name: 'João Silva', phone: '+55 11 99999-9999', lastMessage: 'Olá, tudo bem?', status: 'online' },
@@ -321,9 +283,7 @@ function ContactsPage() {
     <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 border border-purple-500/30">
       <div className="flex items-center justify-between mb-6">
         <h2 className="text-3xl font-bold text-white">Contatos</h2>
-        <button className="bg-gradient-to-r from-pink-500 to-purple-600 text-white px-6 py-3 rounded-xl font-semibold">
-          Importar Contatos
-        </button>
+        <button className="bg-gradient-to-r from-pink-500 to-purple-600 text-white px-6 py-3 rounded-xl font-semibold">Importar Contatos</button>
       </div>
       <div className="space-y-4">
         {contacts.map((contact, i) => (
@@ -340,7 +300,7 @@ function ContactsPage() {
                 </div>
               </div>
               <div className="flex items-center space-x-3">
-                <span className={\`w-2 h-2 rounded-full \${contact.status === 'online' ? 'bg-green-400' : 'bg-gray-400'}\`}></span>
+                <span className={`w-2 h-2 rounded-full ${contact.status === 'online' ? 'bg-green-400' : 'bg-gray-400'}`}></span>
                 <button className="text-purple-200 hover:text-white">
                   <MessageSquare className="w-5 h-5" />
                 </button>
@@ -353,7 +313,6 @@ function ContactsPage() {
   );
 }
 
-// Analytics Page
 function AnalyticsPage() {
   return (
     <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 border border-purple-500/30">
@@ -371,8 +330,7 @@ function AnalyticsPage() {
         </div>
         <div className="bg-purple-800/30 p-6 rounded-xl">
           <p className="text-purple-200 text-sm mb-2">Conversões</p>
-          <p className="text-4xl
-          font-bold text-white">342</p>
+          <p className="text-4xl font-bold text-white">342</p>
           <p className="text-green-400 text-sm mt-2">+18% vs mês anterior</p>
         </div>
       </div>
@@ -381,7 +339,6 @@ function AnalyticsPage() {
   );
 }
 
-// Settings Page
 function SettingsPage({ user }) {
   return (
     <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 border border-purple-500/30">
@@ -392,23 +349,13 @@ function SettingsPage({ user }) {
           <div className="space-y-3">
             <div>
               <label className="block text-purple-200 text-sm mb-1">Nome</label>
-              <input
-                type="text"
-                defaultValue={user?.name}
-                className="w-full bg-purple-900/50 border border-purple-500/30 rounded-lg px-4 py-2 text-white"
-              />
+              <input type="text" defaultValue={user?.name} className="w-full bg-purple-900/50 border border-purple-500/30 rounded-lg px-4 py-2 text-white" />
             </div>
             <div>
               <label className="block text-purple-200 text-sm mb-1">Email</label>
-              <input
-                type="email"
-                defaultValue={user?.email}
-                className="w-full bg-purple-900/50 border border-purple-500/30 rounded-lg px-4 py-2 text-white"
-              />
+              <input type="email" defaultValue={user?.email} className="w-full bg-purple-900/50 border border-purple-500/30 rounded-lg px-4 py-2 text-white" />
             </div>
-            <button className="bg-gradient-to-r from-pink-500 to-purple-600 text-white px-6 py-2 rounded-lg font-semibold">
-              Salvar Alterações
-            </button>
+            <button className="bg-gradient-to-r from-pink-500 to-purple-600 text-white px-6 py-2 rounded-lg font-semibold">Salvar Alterações</button>
           </div>
         </div>
 
@@ -419,10 +366,7 @@ function SettingsPage({ user }) {
               <p className="text-white font-semibold">Trial - 7 Dias Grátis</p>
               <p className="text-purple-200 text-sm">Expira em {user && Math.ceil((new Date(user.trialEndsAt) - new Date()) / (1000 * 60 * 60 * 24))} dias</p>
             </div>
-            <button
-              onClick={() => window.open('https://pay.kiwify.com.br/XxlKJT4', '_blank')}
-              className="bg-gradient-to-r from-pink-500 to-purple-600 text-white px-6 py-2 rounded-lg font-semibold"
-            >
+            <button onClick={() => window.open('https://pay.kiwify.com.br/XxlKJT4', '_blank')} className="bg-gradient-to-r from-pink-500 to-purple-600 text-white px-6 py-2 rounded-lg font-semibold">
               Fazer Upgrade
             </button>
           </div>
@@ -433,4 +377,3 @@ function SettingsPage({ user }) {
 }
 
 export default Dashboard;
-"@ | Out-File -FilePath src/pages/Dashboard.jsx -Encoding utf8
